@@ -6,6 +6,7 @@ import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 
+import { FaGoogle, FaGithub } from "react-icons/fa"
 import { authClient } from "@/lib/auth-client"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -114,12 +115,24 @@ export const SignInView = () => {
                                     </span>
                                 </div>
                                 <div className="grid grid-cols-2 gap-4">
-                                    <Button disabled={pending} variant="outline" type='button' className="w-full">
-                                        Google
+                                    <Button disabled={pending}
+                                    onClick = {() => {
+                                        authClient.signIn.social({
+                                            provider: 'google'
+                                        })
+                                    }} variant="outline" type='button' className="w-full">
+                                        <FaGoogle />
                                     </Button>
-                                    <Button disabled={pending} variant="outline" type='button' className="w-full">
-                                        GitHub
+
+                                    <Button disabled={pending}
+                                    onClick = {() => {
+                                        authClient.signIn.social({
+                                            provider: 'github'
+                                        })
+                                    }} variant="outline" type='button' className="w-full">
+                                        <FaGithub />
                                     </Button>
+
                                 </div>
                                 <div className="text-center text-sm">
                                     Don&apos;t have an account?<Link className="underline underlife-offset-4" href='/sign-up'> Sign up</Link>
