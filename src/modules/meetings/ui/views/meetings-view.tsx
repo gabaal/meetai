@@ -1,9 +1,12 @@
 'use client'
 
+import { DataTable } from "@/components/data-table"
 import { ErrorState } from "@/components/error-state"
 import { LoadingState } from "@/components/loading-state"
 import { useTRPC } from "@/trpc/client"
 import { useSuspenseQuery } from "@tanstack/react-query"
+import { columns } from "../components/columns"
+import { EmptyState } from "@/components/empty-state"
 
 export const MeetingsView = () => {
 
@@ -12,9 +15,14 @@ export const MeetingsView = () => {
 
 
     return (
-        <div>
-            <h1>Meetings View</h1>
-            {JSON.stringify(data, null, 2)}
+        <div className="flex-1 pb-4 px-4 md:px-8 flex flex-col gap-y-4">
+            <DataTable data={data.items} columns={columns}/>
+            {data.items.length === 0 && (
+                            <EmptyState
+                                title="Create your first meeting."
+                                description="Create a meeting to start collaborating. Each meeting can have multiple participants and can be customized with various settings."
+                            />
+                        )}
         </div>
     )
 

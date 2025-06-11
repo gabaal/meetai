@@ -1,7 +1,7 @@
 "use client"
 
 import { ColumnDef } from "@tanstack/react-table"
-import { AgentGetOne } from "../../types"
+import { AgentGetOne, AgentsGetMany } from "../../types"
 import { GeneratedAvatar } from "@/components/generated-avatar"
 import { BadgeIcon, CornerDownRightIcon, VideoIcon } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
@@ -9,7 +9,7 @@ import { Badge } from "@/components/ui/badge"
 
 
 
-export const columns: ColumnDef<AgentGetOne>[] = [
+export const columns: ColumnDef<AgentsGetMany[number]>[] = [
     {
         accessorKey: "name",
         header: "Agent name",
