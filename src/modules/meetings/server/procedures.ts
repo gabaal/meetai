@@ -37,10 +37,6 @@ export const meetingsRouter = createTRPCRouter({
         return token
     }),
 
-
-
-
-
     create: protectedProcedure
         .input(meetingsInsertSchema)
         .mutation(async ({ input, ctx }) => {
@@ -69,9 +65,9 @@ export const meetingsRouter = createTRPCRouter({
                         recording: {
                             mode: "auto-on",
                             quality: "1080p",
-                        }
-                    }
-                }
+                        },
+                    },
+                },
 
             })
             const [existingAgent] = await db
