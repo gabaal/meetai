@@ -2,12 +2,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
 
-
-
-
-
 export const CallEnded = () => {
-
 
     return (
         <div className="flex flex-col items-center justify-center h-full bg-radial from-sidebar-accent to-sidebar">
