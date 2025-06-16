@@ -3,10 +3,10 @@
 import { ColumnDef } from "@tanstack/react-table"
 import { MeetingGetMany } from "../../types"
 import { GeneratedAvatar } from "@/components/generated-avatar"
-import { BadgeIcon, CircleCheckIcon, CircleXIcon, ClockArrowUpIcon, ClockFadingIcon, CornerDownRightIcon, LoaderIcon, VideoIcon } from "lucide-react"
+import {  CircleCheckIcon, CircleXIcon, ClockArrowUpIcon, ClockFadingIcon, CornerDownRightIcon, LoaderIcon } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { format } from 'date-fns'
-import  humanizeDuration  from 'humanize-duration'
+
 import { cn, formatDuration } from "@/lib/utils"
 
 

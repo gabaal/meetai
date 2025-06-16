@@ -16,7 +16,7 @@ import { Alert, AlertTitle } from "@/components/ui/alert"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
-import loadConfig from "next/dist/server/config"
+
 
 
 const formSchema = z.object({

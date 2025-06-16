@@ -1,6 +1,6 @@
-import { AlertCircleIcon } from "lucide-react";
+
 import Image from "next/image";
-import { title } from "process";
+
 
 interface Props {
     title: string

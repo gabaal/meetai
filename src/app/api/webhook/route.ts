@@ -15,7 +15,6 @@ import { inngest } from '@/inngest/client'
 import OpenAI from 'openai'
 import { ChatCompletionMessageParam } from 'openai/resources/index.mjs'
 import { generateAvatarUri } from '@/lib/avatar'
-import { StreamChat } from 'stream-chat'
 import { streamChat } from '@/lib/stream-chat'
 
 const openaiClient = new OpenAI({ apiKey: process.env.OPEN_AI_API_KEY! })

@@ -9,10 +9,10 @@ import { useRouter } from "next/navigation"
 import { useConfirm } from "@/hooks/use-confirm"
 import { useState } from "react"
 import { UpdateMeetingsDialog } from "../components/update-meeting-dialog"
-import { Divide } from "lucide-react"
+
 import { UpcomingState } from "../components/upcoming-state"
 import { ActiveState } from "../components/active-state"
-import { CancelledState } from "../components/cancelled-state"
+
 import { ProcessingState } from "../components/processing-state"
 import { CompletedState } from "../components/completed-state"
 
@@ -54,7 +54,7 @@ export const MeetingIdView = ({ meetingId }: Props) => {
 
     const isActive = data.status === "active"
     const isUpcoming = data.status === "upcoming"
-    const isCancelled = data.status === "cancelled"
+
     const isCompleted = data.status === "completed"
     const isProcessing = data.status === "processing"
 
@@ -67,7 +67,7 @@ export const MeetingIdView = ({ meetingId }: Props) => {
                 initialValues={data} />
             <div className="flex-1 py-4 px-4 md:px-8 flex flex-col gap-y-4">
                 <MeetingIdViewHeader meetingId={meetingId} meetingName={data.name} onEdit={() => setUpdateMeetingDialogOpen(true)} onRemove={handleRemoveMeeting} />
-                {isCancelled && <CancelledState />}
+                
                 {isProcessing && <ProcessingState />}
 
                 {isActive && <ActiveState
@@ -76,8 +76,7 @@ export const MeetingIdView = ({ meetingId }: Props) => {
 
                 {isUpcoming && <UpcomingState
                     meetingId={meetingId}
-                    onCancelMeeting={() => { }}
-                    isCancelling={false}
+                    
                 />}
                 {isCompleted && <CompletedState data={data}/>}
             </div>

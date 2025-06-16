@@ -1,5 +1,4 @@
 import { ResponsiveDialog } from "@/components/responsive-dialog";
-import { desc } from "drizzle-orm";
 import { AgentForm } from "./agents-form";
 
 interface NewAgentDialogProps {
